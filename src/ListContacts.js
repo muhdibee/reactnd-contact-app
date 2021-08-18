@@ -6,9 +6,11 @@ class ListContacts extends Component {
     }
 
     render() {
-        console.log('props', this.props.contacts);
+        const contacts = this.props.contacts;
+        console.log('props', contacts);
         return(
-            <ol className='contact-list'>
+            <ol className='contact-list'><strong>Contact List</strong>
+                {contacts.map((contact) => <li key={contact.id}>{contact.name}</li>)}
             </ol>
         )
     }
